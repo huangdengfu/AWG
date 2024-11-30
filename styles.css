@@ -62,23 +62,22 @@ h1 {
 /* 弹窗内容框 */
 .modal-content {
   background-color: #fff;
-  width: 90%;
-  /* 弹窗宽度为窗口的 90% */
+  width: 80%;
+  /* 使用百分比宽度 */
   max-width: 800px;
-  /* 最大宽度为 800px */
+  /* 最大宽度 800px */
   height: auto;
-  /* 高度自适应 */
-  max-height: 80vh;
-  /* 最大高度为 80% 的视口高度 */
+  max-height: calc(100vh - 40px);
+  /* 最大高度为视口高度减去一些空间 */
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   position: relative;
   overflow: hidden;
-  /* 防止内容溢出 */
   border-radius: 10px;
   /* 圆角效果 */
 }
+
 
 /* 关闭按钮区域 */
 .close-container {
@@ -129,6 +128,7 @@ h1 {
   max-width: 100%;
   height: auto;
 }
+
 
 
 
@@ -254,5 +254,13 @@ input-box.shake-border {
 
   h1 {
     font-size: 1.8em;
+  }
+
+  .modal-content {
+    width: 90%;
+    /* 更小的设备使用 90% 宽度 */
+    max-width: none;
+    /* 移除最大宽度 */
+    padding: 10px;
   }
 }
