@@ -174,3 +174,9 @@ window.addEventListener('click', function (event) {
     closeModal();
   }
 });
+
+// 隐藏加载提示
+function hideLoadingMessage() {
+  const loadingMessage = document.getElementById("loadingMessage");
+  loadingMessage.style.display = "none"; // 隐藏加载提示
+}
