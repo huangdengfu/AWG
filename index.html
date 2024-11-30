@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>导线AWG美规转换器</title>
+
+  <!-- 合并后的CSS文件 -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- 异步加载JavaScript -->
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -24,7 +29,6 @@
           contenteditable="true" data-placeholder="请输入AWG值"></div>
         <div id="errorAWG" class="error-message">值超出范围 [0-40]</div>
       </div>
-      <!-- <br> -->
       <hr>
       <br>
       <!-- 直径(毫米)框 -->
@@ -40,7 +44,6 @@
         <div class="input-box" id="areaBox" onclick="editField('area')" onkeydown="updateValue(event, 'area')"
           contenteditable="true" data-placeholder="请输入面积(mm²)"></div>
       </div>
-      <!-- <br> -->
       <hr>
       <br>
       <!-- 直径(英寸)框 -->
@@ -56,7 +59,6 @@
         <div class="input-box" id="inchAreaBox" onclick="editField('inchArea')"
           onkeydown="updateValue(event, 'inchArea')" contenteditable="true" data-placeholder="请输入面积(in²)"></div>
       </div>
-      <!-- <br> -->
       <hr>
       <br>
       <!-- 圆密耳面积框 -->
@@ -66,7 +68,7 @@
           contenteditable="true" data-placeholder="请输入圆密耳面积(KCMIL)"></div>
       </div>
     </div>
-    <!-- 说明文字，左对齐 -->
+
     <div class="note">
       <p>按下Enter键计算结果，结果会按照最接近的AWG值取整来推算其它相关参数</p>
     </div>
@@ -75,24 +77,17 @@
   <!-- 弹窗 -->
   <div id="infoModal" class="modal">
     <div class="modal-content">
-
-      <!-- 关闭按钮区域 -->
       <div class="close-container">
         <span class="close" onclick="closeModal()">&times;</span>
       </div>
-
-      <!-- 图文内容区域 -->
       <div class="content-container">
-        <!-- 加载提示 -->
         <div id="loadingMessage" class="loading-message">图片加载中...</div>
+        <!-- 使用延迟加载 -->
         <img src="线规.png" alt="说明图片" loading="lazy" onload="hideLoadingMessage()">
       </div>
-
     </div>
   </div>
 
-
-  <script src="scripts.js"></script>
 </body>
 
 </html>
