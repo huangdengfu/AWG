@@ -57,6 +57,7 @@ function updateValue(event, field) {
       closestAWG = value;
     }
 
+
     // 计算出AWG值后，检查它是否在有效范围内
     if (closestAWG < 0 || closestAWG > 40) {
       return; // 不再继续处理
@@ -74,13 +75,11 @@ function updateValue(event, field) {
     document.getElementById("inchAreaBox").textContent = `${result.inchArea.toFixed(5)} (in²)`;
     document.getElementById("milAreaBox").textContent = `${result.milArea.toFixed(4)} (KCMIL)`;
 
-
-    // 保持光标聚焦在当前输入框内
-    setTimeout(() => {
-      box.focus(); // 确保光标保持在当前输入框内
-    }, 0); // 使用延迟来确保更新后焦点不会丢失
+    // 手动去除焦点
+    document.activeElement.blur(); // 移除当前输入框的焦点
   }
 }
+
 
 // 清除错误提示
 function clearError() {
@@ -147,4 +146,13 @@ function findClosestAWGByArea(area) {
   }
 
   return closestAWG;
+}
+
+// 当点击输入框时清空其中的内容
+function editField(field) {
+  const box = document.getElementById(field + "Box");
+
+  // 清空内容
+  box.textContent = "";
+  box.focus();  // 确保输入框获得焦点
 }
