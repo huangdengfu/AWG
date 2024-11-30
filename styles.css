@@ -69,7 +69,7 @@ h1 {
   height: auto;
   max-height: calc(100vh - 40px);
   /* 最大高度为视口高度减去一些空间 */
-  margin: 5% auto;
+  margin: 2% auto;
   padding: 20px;
   border: 1px solid #888;
   position: relative;
