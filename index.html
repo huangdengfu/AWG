@@ -83,8 +83,11 @@
 
       <!-- 图文内容区域 -->
       <div class="content-container">
-        <img src="线规.png" alt="说明图片" loading="lazy">
+        <!-- 加载提示 -->
+        <div id="loadingMessage" class="loading-message">图片加载中...</div>
+        <img src="线规.png" alt="说明图片" loading="lazy" onload="hideLoadingMessage()">
       </div>
+
     </div>
   </div>
 
