@@ -264,3 +264,15 @@ input-box.shake-border {
     padding: 10px;
   }
 }
+
+/* 加载提示的样式 */
+.loading-message {
+  font-size: 16px;
+  color: #3498db;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+/* 其他样式保持不变 */
