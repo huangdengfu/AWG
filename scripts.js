@@ -157,7 +157,6 @@ function editField(field) {
   box.focus();  // 确保输入框获得焦点
 }
 
-
 // 显示弹窗
 document.getElementById("showInfoButton").addEventListener("click", function () {
   document.getElementById("infoModal").style.display = "block";
@@ -167,3 +166,11 @@ document.getElementById("showInfoButton").addEventListener("click", function () 
 function closeModal() {
   document.getElementById("infoModal").style.display = "none";
 }
+
+// 点击弹窗外部时关闭弹窗
+window.addEventListener('click', function (event) {
+  const modal = document.getElementById("infoModal");
+  if (event.target === modal) {
+    closeModal();
+  }
+});
